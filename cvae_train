@@ -1,0 +1,41 @@
+/home/goswam_y/anaconda3/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:84.)
+  return F.conv2d(input, weight, bias, self.stride,
+/home/goswam_y/Dropbox/Image_analysis_comprehensive/main_codes/CVAE_embedder/models/CVAE.py:92: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+  eps = torch.cuda.FloatTensor(std.size()).normal_()
+                                                mainpath  ... cell_label
+0      /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...          1
+1      /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...          2
+2      /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...          3
+3      /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...          4
+4      /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...          5
+...                                                  ...  ...        ...
+14890  /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...        322
+14891  /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...        323
+14892  /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...        328
+14893  /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...        332
+14894  /home/goswam_y/Dropbox/Image_analysis_comprehe...  ...        334
+
+[14895 rows x 8 columns]
+{'VAE': <class 'models.CVAE.VAE'>, 'CVAE': <class 'models.CVAE.CVAE'>} CVAE <class 'models.CVAE.CVAE'>
+using cuda
+using conditional
+EPOCH: 0, loss: 0.0680671484778895, best loss: 0.0680671484778895, test_recon_loss: 0.06696356176709758, test_loss: 0.0680671484778895, test_kl_loss: 110.358660920429, test_clf_loss: 1.1000765153088399
+EPOCH: 50, loss: 0.021058299983581188, best loss: 0.02105146551335286, test_recon_loss: 0.02103451008465455, test_loss: 0.021058299983581188, test_kl_loss: 2.378999972991713, test_clf_loss: 1.0986535971338376
+EPOCH: 100, loss: 0.008889683768792204, best loss: 0.0003643370884800153, test_recon_loss: 0.00012885935372503686, test_loss: 0.008889683768792204, test_kl_loss: 876.0824551359843, test_clf_loss: 1.581325800037096
+EPOCH: 150, loss: 0.005952177273053907, best loss: 0.0003643370884800153, test_recon_loss: 8.980204401433123e-05, test_loss: 0.005952177273053907, test_kl_loss: 586.2375347627893, test_clf_loss: 6.597760907512817
+EPOCH: 200, loss: 0.0058216301986298005, best loss: 0.0003643370884800153, test_recon_loss: 0.00010325842283541239, test_loss: 0.0058216301986298005, test_kl_loss: 571.8371917120201, test_clf_loss: 6.291536591924569
+EPOCH: 250, loss: 0.006138820546144916, best loss: 0.0003643370884800153, test_recon_loss: 8.269093508515463e-05, test_loss: 0.006138820546144916, test_kl_loss: 605.6129720584784, test_clf_loss: 5.997615556662497
+EPOCH: 300, loss: 0.0052954228389345435, best loss: 0.0003643370884800153, test_recon_loss: 8.373250604209968e-05, test_loss: 0.0052954228389345435, test_kl_loss: 521.1690457982079, test_clf_loss: 6.103591533025746
+EPOCH: 350, loss: 0.005033161256214734, best loss: 0.0003643370884800153, test_recon_loss: 8.407857291968323e-05, test_loss: 0.005033161256214734, test_kl_loss: 494.90829196301195, test_clf_loss: 5.843189814139548
+EPOCH: 400, loss: 0.011205255044558557, best loss: 0.0003643370884800153, test_recon_loss: 8.300300468075985e-05, test_loss: 0.011205255044558557, test_kl_loss: 1112.2252281678127, test_clf_loss: 4.297142303802295
+EPOCH: 450, loss: 0.004652104272496815, best loss: 0.0003643370884800153, test_recon_loss: 8.316132112386028e-05, test_loss: 0.004652104272496815, test_kl_loss: 456.89430030395056, test_clf_loss: 5.680341223735623
+EPOCH: 500, loss: 0.005017341243696517, best loss: 0.0003643370884800153, test_recon_loss: 8.25800206266408e-05, test_loss: 0.005017341243696517, test_kl_loss: 493.4761393208678, test_clf_loss: 5.347571209718334
+EPOCH: 550, loss: 0.005297498165927741, best loss: 0.0003643370884800153, test_recon_loss: 8.36971705505609e-05, test_loss: 0.005297498165927741, test_kl_loss: 521.3801011171628, test_clf_loss: 5.364039645014132
+EPOCH: 600, loss: 0.005968879794057291, best loss: 0.0003643370884800153, test_recon_loss: 8.400854429937184e-05, test_loss: 0.005968879794057291, test_kl_loss: 588.4871315189398, test_clf_loss: 5.344094402240242
+EPOCH: 650, loss: 0.005096789790375565, best loss: 0.0003643370884800153, test_recon_loss: 8.35642450844016e-05, test_loss: 0.005096789790375565, test_kl_loss: 501.3225685777821, test_clf_loss: 4.961050646622816
+EPOCH: 700, loss: 0.005298278208765113, best loss: 0.0003643370884800153, test_recon_loss: 8.35930489837167e-05, test_loss: 0.005298278208765113, test_kl_loss: 521.4685264093118, test_clf_loss: 5.652085788780588
+EPOCH: 750, loss: 0.005296794641290902, best loss: 0.0003643370884800153, test_recon_loss: 8.412606320249731e-05, test_loss: 0.005296794641290902, test_kl_loss: 521.2668753294547, test_clf_loss: 5.282801389454114
+EPOCH: 800, loss: 0.004714709160597473, best loss: 0.0003643370884800153, test_recon_loss: 8.276638516827356e-05, test_loss: 0.004714709160597473, test_kl_loss: 463.19427716631986, test_clf_loss: 5.207713639668147
+EPOCH: 850, loss: 0.004745482370590641, best loss: 0.0003643370884800153, test_recon_loss: 8.362181427087538e-05, test_loss: 0.004745482370590641, test_kl_loss: 466.18606522308175, test_clf_loss: 4.704761185474787
+EPOCH: 900, loss: 0.004606108012984026, best loss: 0.0003643370884800153, test_recon_loss: 8.380378910442598e-05, test_loss: 0.004606108012984026, test_kl_loss: 452.23043547672245, test_clf_loss: 5.0261458006029995
+EPOCH: 950, loss: 0.004868609021652582, best loss: 0.0003643370884800153, test_recon_loss: 8.376560085132258e-05, test_loss: 0.004868609021652582, test_kl_loss: 478.4843528314739, test_clf_loss: 4.201518364823397
