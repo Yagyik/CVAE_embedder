@@ -39,7 +39,7 @@ def setup_args():
     options.add_argument('--batch-size', action="store", dest="batch_size", default=256, type=int)
     options.add_argument('--num-workers', action="store", dest="num_workers", default=8, type=int)
     options.add_argument('--learning-rate', action="store", dest="learning_rate", default=1e-4, type=float)
-    options.add_argument('--max-epochs', action="store", dest="max_epochs", default=2000, type=int)
+    options.add_argument('--max-epochs', action="store", dest="max_epochs", default=500, type=int)
     options.add_argument('--weight-decay', action="store", dest="weight_decay", default=1e-5, type=float)
     options.add_argument('--lamb', action="store", dest="lamb", default=0.00001, type = float)
     options.add_argument('--lamb2', action="store", dest="lamb2", default=10, type = float)
@@ -161,11 +161,11 @@ def run_training(args, logger):
 
         else:
             train_summary = train_classifier_model(trainloader=trainloader,
-                                                    model=net,classifier=None,CE_weights=CE_weights,
+                                                    model=net,classifier=None,CE_weights=None,
                                                     optimizer=optimizer, single_batch=args.debug_mode)
             logger.info("Training summary: %s" % train_summary)
             test_summary = evaluate_classifier_model(testloader=testloader,
-                                                  model=net,classifier=None,CE_weights=CE_weights,
+                                                  model=net,classifier=None,CE_weights=None,
                                                     single_batch=args.debug_mode)
 
             logger.info("Evaluation summary: %s" % test_summary)
@@ -200,7 +200,7 @@ if __name__ == "__main__":
     args = setup_args()
 
     # df_files = read_dataframe_list(args.dataframe_list)
-
+    print(args.conditional,"doing conditional")
     metadata_df = read_and_combine_dataframes(args.dataframe_list)
     # metadata_df = format_fix_dataframe(metadata_df)
     print(metadata_df)

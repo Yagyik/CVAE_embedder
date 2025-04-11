@@ -53,10 +53,15 @@ def main(args, logger):
 
     combined_df.to_csv('combined_recon_df.csv', index=False)
 
-    # Load the best VAE model
-    net = model_dict[args.model_type](latent_variable_size=args.latent_dims,
+    # Load the best VAE 
+    if args.model_type == 'CVAE':
+        net = model_dict[args.model_type](latent_variable_size=args.latent_dims,
                                       lamb=args.lamb,
                                       lamb2=args.lamb2,
+                                      batchnorm=False)
+    else:
+        net = model_dict[args.model_type](latent_variable_size=args.latent_dims,
+                                      lamb=args.lamb,
                                       batchnorm=False)
     
     net.load_state_dict(torch.load(args.pretrained_file)['state_dict'])
@@ -77,8 +82,8 @@ def main(args, logger):
     # extract AE features
     print("using AE features, PCA features??",args.ae_features,args.pca_features)
     if args.ae_features:
-        os.makedirs(os.path.join(args.save_dir, 'CVAE_recon'), exist_ok=True)
-        visualize_AE_recon(dataloader=dataloader, net=net, savedir=os.path.join(args.save_dir, 'CVAE_recon'))
+        os.makedirs(os.path.join(args.save_dir, 'crops'), exist_ok=True)
+        visualize_AE_recon(dataloader=dataloader, net=net, savedir=os.path.join(args.save_dir, 'crops'))
 
     # extract PCA features
     # if args.pca_features:

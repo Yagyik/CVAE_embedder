@@ -1,0 +1,1 @@
+/Data2/Cell_Lineage_Experiment_Images/MCF7_standard_set/crop_metadata.csv

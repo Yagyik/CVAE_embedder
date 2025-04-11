@@ -41,7 +41,9 @@ class CellImageDataset(Dataset):
    
     def load_image(self, fname):
         img = io.imread(fname, plugin='tifffile')
+        # print("pre norm img min",np.min(img),"img max",np.max(img),"img mean",np.mean(img),img.shape)
         img = img.astype(np.float32)
+        # print("post norm img min",np.min(img),"img max",np.max(img),"img mean",np.mean(img),img.shape)
         # print("img min",np.min(img),"img max",np.max(img),"img mean",np.mean(img),img.shape)
         # img /= np.max(img)
         # plt.imshow(img, cmap='viridis')

@@ -49,7 +49,8 @@ def compute_loss(outputs, targets, mu, logvar,lamb=0.0000001, loss_trackers=None
         outputs = torch.where(torch.isnan(outputs), torch.zeros_like(outputs), outputs)
         
     # recon_loss = nn.functional.binary_cross_entropy(outputs, targets, reduction='sum')
-    recon_loss = nn.functional.binary_cross_entropy_with_logits(outputs, targets, reduction='sum')
+    # recon_loss = nn.functional.binary_cross_entropy_with_logits(outputs, targets, reduction='sum') ### use when decoder does not have a final sigmoid activation
+    recon_loss = nn.functional.mse_loss(outputs, targets, reduction='sum')
 
     # KL divergence loss
     kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
